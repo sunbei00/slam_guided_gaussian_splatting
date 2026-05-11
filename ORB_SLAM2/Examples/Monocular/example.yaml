@@ -1,0 +1,114 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+
+# Camera calibration and distortion parameters (OpenCV) 
+Camera.fx: 877.9498
+Camera.fy: 879.1821
+Camera.cx: 638.6965
+Camera.cy: 376.3876
+
+
+Camera.k1: 0.144951
+Camera.k2: -0.544309
+Camera.p1: 0.000247
+Camera.p2: 0.003477
+Camera.k3: 0.500656
+
+# Camera frames per second 
+Camera.fps: 10.0
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+Camera.RGB: 1
+
+# Number of images to process. 0 or negative uses all images.
+Input.MaxImages: 0
+
+#--------------------------------------------------------------------------------------------
+# KeyFrame / Culling Parameters
+#--------------------------------------------------------------------------------------------
+# Minimum number of frames after the last keyframe before a new frame can become a candidate.
+Tracking.MinFrames: 10
+
+# Relocalization guard interval; monocular GS keyframe sampling no longer force-inserts at this interval.
+Tracking.MaxFrames: 10
+
+# Insert a monocular candidate only when its shared map-point ratio with the last keyframe is below this value.
+Tracking.RefRatioMonocular: 0.75
+
+# Minimum number of tracking inliers required before accepting a new keyframe candidate.
+Tracking.MinInliersNewKF: 12
+
+# Legacy multi-thread option; ignored by the monocular single-threaded keyframe sampler.
+Tracking.AllowMonocularWhenMapperBusy: 0
+
+# Legacy multi-thread queue limit; ignored by the monocular single-threaded keyframe sampler.
+Tracking.MaxMonocularKeyframeQueue: 5
+
+# Enable pose/image snapshot export while running in localization-only mode.
+Tracking.CreateLocalizationKeyFrames: 1
+
+# Minimum number of frames after the last localization snapshot before another snapshot can be considered.
+Tracking.LocalizationKFMinFrames: 0
+
+# Maximum localization snapshot interval used by the localization-only snapshot path.
+Tracking.LocalizationKFMaxFrames: 5
+
+# Insert a localization snapshot when inlier matches fall below this value.
+Tracking.LocalizationKFMinMatches: 25
+
+# Less aggressive culling
+# Minimum found ratio before a newly created map point can be culled.
+LocalMapping.MapPointFoundRatioTh: 0.15
+
+# Minimum monocular observations required before a recent map point is kept.
+LocalMapping.MapPointObsThMonocular: 1
+
+# Minimum keyframe age before recent map points are eligible for culling.
+LocalMapping.MapPointCullingMinAgeKFs: 3
+
+# Maximum keyframe age used for recent map point culling.
+LocalMapping.MapPointCullingMaxAgeKFs: 5
+
+# Minimum observations used when checking keyframe redundancy.
+LocalMapping.KeyFrameCullingMinObs: 3
+
+# Redundancy ratio above which a keyframe can be culled.
+LocalMapping.KeyFrameCullingRedundancyTh: 0.98
+
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+
+# ORB Extractor: Number of features per image
+ORBextractor.nFeatures: 4000
+
+# ORB Extractor: Scale factor between levels in the scale pyramid 	
+ORBextractor.scaleFactor: 1.2
+
+# ORB Extractor: Number of levels in the scale pyramid	
+ORBextractor.nLevels: 12
+
+# ORB Extractor: Fast threshold
+# Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.
+# Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST
+# You can lower these values if your images have low contrast			
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 5
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#--------------------------------------------------------------------------------------------
+Viewer.KeyFrameSize: 0.1
+Viewer.KeyFrameLineWidth: 1
+Viewer.GraphLineWidth: 1
+Viewer.PointSize: 2
+Viewer.CameraSize: 0.15
+Viewer.CameraLineWidth: 2
+Viewer.ViewpointX: 0
+Viewer.ViewpointY: -10
+Viewer.ViewpointZ: -0.1
+Viewer.ViewpointF: 2000
