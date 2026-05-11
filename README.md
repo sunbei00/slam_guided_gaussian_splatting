@@ -106,7 +106,7 @@ docker run \
     -e "TERM=xterm-256color" \
     -e "QT_X11_NO_MITSHM=1" \
     -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
-    -v ~/share:~/share \
+    -v ~/share:/root/share \
     --user root \
     --security-opt seccomp=unconfined \
     --name orb_slam2_gsplat \
@@ -118,8 +118,6 @@ docker run \
     orb_slam2_gsplat  \
     /bin/bash
 ```
-
-and builds ORB-SLAM2 during the image build.
 
 ## Usage
 

@@ -37,7 +37,7 @@ RUN apt-get update && \
 
 RUN curl -fsSL https://pixi.sh/install.sh | bash
 
-RUN git https://github.com/sunbei00/slam_guided_gaussian_splatting.git
+RUN git clone https://github.com/sunbei00/slam_guided_gaussian_splatting.git
 
 WORKDIR /root/slam_guided_gaussian_splatting
 
